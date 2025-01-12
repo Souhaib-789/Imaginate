@@ -9,11 +9,14 @@ import { fonts } from '../../utilities/fonts';
 import { useNavigation } from '@react-navigation/native';
 import GIRL from '../../assets/images/girl.jpg'
 import GIR from '../../assets/images/home.jpg'
+import { useSelector } from 'react-redux';
 
 const Home = () => {
 
   const [search, setSearch] = useState(null)
   const navigation = useNavigation()
+    const USER = useSelector(state => state.AuthReducer.user)
+  console.log(JSON.stringify(USER, null , 8));
 
   const CATEGORIES = [
     {
@@ -33,8 +36,6 @@ const Home = () => {
       name: 'Most Visited',
     },
   ]
-
-
 
   const renderCategoryItem = ({ item, index }) => {
     return (
@@ -123,7 +124,7 @@ const Home = () => {
           <TextComponent text={'Near You'} style={{ fontFamily: fonts?.BOLD, fontSize: 15 }} />
 
           <TouchableOpacity>
-            <TextComponent text={'More'} style={{ color: colors.L_GRAY, fontSize: 12 , fontFamily: fonts?.SEMI_BOLD}} />
+            <TextComponent text={'More'} style={{ color: colors.L_GRAY, fontSize: 12, fontFamily: fonts?.SEMI_BOLD }} />
           </TouchableOpacity>
         </View>
 

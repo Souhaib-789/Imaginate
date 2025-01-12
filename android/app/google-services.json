@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "657590317170",
+    "project_id": "imaginate-2d783",
+    "storage_bucket": "imaginate-2d783.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:657590317170:android:1766d1082c5feb934412eb",
+        "android_client_info": {
+          "package_name": "com.imaginate"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "657590317170-gkv49vr0fuu2pkkjgdd65v59a5cda09h.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.imaginate",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "657590317170-i3s0p3diajpiv0fg8i51lvrni40ohfk4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB-I2i1FmG4d6hs20vdMUtUei3lD5906C4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "657590317170-i3s0p3diajpiv0fg8i51lvrni40ohfk4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

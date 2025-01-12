@@ -61,7 +61,7 @@ const AppNavigation = () => {
 
       <RNModal visible={loading} transparent>
         <View style={{ flex: 1, backgroundColor: 'rgba(0,0,0,0.5)', justifyContent: 'center', alignItems: 'center' }}>
-          <ActivityIndicator size={'large'} color={colors.WHITE} />
+          <ActivityIndicator size={'large'} color={colors.BLACK} />
           <Text style={{ color: '#fff', margin: 10 }}>{'Loading , Please wait ...'}</Text>
         </View>
       </RNModal>
@@ -70,7 +70,7 @@ const AppNavigation = () => {
       <Snackbar
         onDismiss={() => dispatch(hideAlert())}
         duration={3000}
-        style={{ backgroundColor: colors.BLACK }}
+        style={{ backgroundColor: colors.WHITE }}
         visible={showAlert}>
         {alert?.message ? alert?.message : null}
       </Snackbar>

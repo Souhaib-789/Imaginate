@@ -100,9 +100,9 @@ const Input = props => {
             }}
             onPress={() => setIsPassword(!isPassword)}>
             {isPassword ? (
-              <Icon name={'eye-with-line'} type={IconTypes.Entypo} size={20} color={colors.LIGHT_GREY} />
+              <Icon name={'eye-with-line'} type={IconTypes.Entypo} size={18} color={colors.LIGHT_GREY} />
             ) : (
-              <Icon name={'eye'} type={IconTypes.Entypo} size={20} color={colors.LIGHT_GREY} />
+              <Icon name={'eye'} type={IconTypes.Entypo} size={18} color={colors.LIGHT_GREY} />
 
             )}
           </TouchableOpacity>
@@ -117,8 +117,10 @@ export default Input;
 const styles = StyleSheet.create({
   inputContainer: {
     width: '98%',
-    elevation: 5,
-    backgroundColor: colors?.WHITE,
+    // elevation: 5,
+    backgroundColor: 'rgba(54, 69, 79, 0.2)',
+    borderColor: colors.APPGREY,
+    borderWidth: 1,
     height: 50,
     borderRadius: 10,
     alignItems: 'center',

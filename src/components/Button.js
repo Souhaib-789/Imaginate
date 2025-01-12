@@ -31,8 +31,8 @@ const Button = props => {
             color: props?.light
               ? colors?.BLUE
               : props?.yellow
-              ? colors?.WHITE
-              : colors?.WHITE,
+              ? colors?.BLACK
+              : colors?.BLACK,
               ...props?.Textstyle,
               fontFamily: fonts.BOLD,
           },
@@ -48,7 +48,7 @@ export default Button;
 
 const styles = StyleSheet.create({
   button: {
-    borderRadius: 20,
+    borderRadius: 10,
     width: '100%',
     flexDirection: 'row',
     alignItems: 'center',
