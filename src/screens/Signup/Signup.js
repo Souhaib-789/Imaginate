@@ -1,4 +1,4 @@
-import React, {  useState } from 'react';
+import React, { useState } from 'react';
 import { View, StyleSheet, StatusBar, ScrollView } from 'react-native';
 import { colors } from '../../utilities/colors';
 import TextComponent from '../../components/TextComponent';
@@ -12,6 +12,7 @@ import { login, userData } from '../../redux/Actions/AuthAction';
 import Storage from '../../utilities/AsyncStorage';
 import auth from '@react-native-firebase/auth';
 import { validateEmail } from '../../utilities/validators';
+import firestore from '@react-native-firebase/firestore';
 
 const Signup = () => {
 
@@ -47,8 +48,19 @@ const Signup = () => {
                     const data = {
                         id: user?.user?.uid,
                         email: user?.user?.email,
-                        name: user?.user?.displayName
+                        name: user?.user?.displayName,
+                        profile_photo: user?.user?.photoURL
                     }
+                    dispatch(showAlert('Your account has been created !'));
+                    firestore()
+                        .collection('Users')
+                        .doc(auth().currentUser.uid)
+                        .set({
+                            name: name,
+                            email: email,
+                            uid: auth().currentUser.uid,
+                        });
+
                     Storage.set('@user', JSON.stringify(data));
                     dispatch(userData(data));
                     dispatch(login(true));

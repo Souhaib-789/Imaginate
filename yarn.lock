@@ -2948,6 +2948,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@react-native-firebase/firestore@npm:^21.7.0":
+  version: 21.7.0
+  resolution: "@react-native-firebase/firestore@npm:21.7.0"
+  peerDependencies:
+    "@react-native-firebase/app": 21.7.0
+  checksum: 2a40bc2a07928d69626d538840f7b7e773f614191b63fd41d9e0f6f45e546d548ff8c57ffbeb6bee570668416e01d422faa5d43c24e518172d346b7e164a8caa
+  languageName: node
+  linkType: hard
+
 "@react-native-google-signin/google-signin@npm:^13.1.0":
   version: 13.1.0
   resolution: "@react-native-google-signin/google-signin@npm:13.1.0"
@@ -3742,6 +3751,7 @@ __metadata:
     "@react-native-async-storage/async-storage": ^2.1.0
     "@react-native-firebase/app": ^21.6.2
     "@react-native-firebase/auth": ^21.6.2
+    "@react-native-firebase/firestore": ^21.7.0
     "@react-native-google-signin/google-signin": ^13.1.0
     "@react-native/babel-preset": 0.74.88
     "@react-native/eslint-config": 0.74.88

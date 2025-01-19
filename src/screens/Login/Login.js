@@ -16,6 +16,7 @@ import { GoogleSignin, statusCodes } from '@react-native-google-signin/google-si
 import auth from '@react-native-firebase/auth';
 import { validateEmail } from '../../utilities/validators';
 import { FIREBASE_WEB_CLIENT_ID } from '../../../env';
+import firestore from '@react-native-firebase/firestore';
 
 const Login = () => {
 
@@ -85,22 +86,36 @@ const Login = () => {
 
       let idToken = userInfo?.data?.idToken;
       if (idToken) {
-      
-      const googleCredential = auth?.GoogleAuthProvider?.credential(idToken);
-      await auth()?.signInWithCredential(googleCredential)
-        .then((user) => {
-          const data = {
-            id: user?.user?.uid,
-            name: user?.user?.displayName,
-            email: user?.user?.email,
-            profile_photo: user?.user?.photoURL
+
+        const googleCredential = auth?.GoogleAuthProvider?.credential(idToken);
+        await auth()?.signInWithCredential(googleCredential)
+          .then((user) => {
+            const data = {
+              id: user?.user?.uid,
+              name: user?.user?.displayName,
+              email: user?.user?.email,
+              profile_photo: user?.user?.photoURL
+            }
+            setDataForPersist(data);
+            
+            if (user?.additionalUserInfo?.isNewUser) {
+              console.log('New User');
+              
+              firestore()
+                .collection('Users')
+                .doc(user?.user?.uid)
+                .set({
+                  name: user?.user?.displayName,
+                  email: user?.user?.email,
+                  uid: user?.user?.uid,
+                });
+            }
           }
-          setDataForPersist(data);
-        }
-        )
-        .catch((error) => {
-          console.log(error);
-        });}
+          )
+          .catch((error) => {
+            console.log(error);
+          });
+      }
     } catch (error) {
       // console.log(error.code);
       if (error.code === statusCodes.SIGN_IN_CANCELLED) {
